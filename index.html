@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Store</title>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 20px;
+    }
+
+    .bar {
+      margin-bottom: 15px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .item {
+      border: 1px solid #999;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<h3>Simple Store Page</h3>
+
+<div class="bar">
+  Sort By:
+  <select id="sortBy" onchange="updateList()">
+    <option value="">None</option>
+    <option value="pUp">Price Low-High</option>
+    <option value="pDown">Price High-Low</option>
+    <option value="nUp">Name A-Z</option>
+    <option value="nDown">Name Z-A</option>
+    <option value="rUp">Rating Low-High</option>
+    <option value="rDown">Rating High-Low</option>
+  </select>
+
+  Category:
+  <select id="catBy" onchange="updateList()">
+    <option value="all">All</option>
+    <option value="Electronics">Electronics</option>
+    <option value="Clothing">Clothing</option>
+    <option value="Books">Books</option>
+    <option value="Home">Home</option>
+  </select>
+</div>
+
+<div class="grid" id="storeGrid"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
